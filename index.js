@@ -45,7 +45,7 @@ const commands = [
 const LynksCommands = [
     new SlashCommandBuilder().setName('archvive')
     .setDescription('Archive an attachment with a key')
-]
+].map(LynkCommand => LynkCommand.toJSON())
 const rest = new REST({ version: '9' }).setToken(LyncsToken);
 
 rest.put(Routes.applicationGuildCommands(ClientId, GuildId), { body: LynksCommands })
