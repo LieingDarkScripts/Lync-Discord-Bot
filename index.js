@@ -5,7 +5,7 @@ const {MessageEmbed} = Discord;
 
 const {LyncsToken} = process.env; // Heroku configuration variables
 
-const Client = new Discord.Client();
+const Client = new Discord.Client({ intents: ["GUILDS", "GUILD_MESSAGES"] })
 
 Client.login(LyncsToken)
 
