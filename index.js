@@ -32,6 +32,8 @@ const CommandBuilderRest = new REST({ version: '9'}).setToken(LyncsToken)
 
 // Command creation
 
+console.log("1")
+
 const LynkCommands = [
     new SlashCommandBuilder()
     .setName("Archive")
@@ -49,6 +51,8 @@ const LynkCommands = [
         
     })
 ].map(LynkCommand => LynkCommand.toJSON());
+
+console.log(LynkCommands)
 
 
 // Client Init
