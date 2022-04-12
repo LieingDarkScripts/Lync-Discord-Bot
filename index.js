@@ -51,9 +51,6 @@ rest.put(Routes.applicationGuildCommands(ClientId, GuildId), { body: commands })
 // Client Init
 
 Client.login(LyncsToken)
-CommandBuilderRest.put(Routes.applicationGuildCommands(ClientId, GuildId, {body: LynkCommands}))
-    .then(() => console.log("registered"))
-    .catch(console.error);
 
 
 Client.on("messageCreate", (Message) => {
