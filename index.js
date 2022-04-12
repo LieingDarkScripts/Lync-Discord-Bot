@@ -48,9 +48,11 @@ const LynksCommands = [
     .setDescription('Archive an attachment with a key')
     .addUserOption(Option => {
         Option
-            .setName("archive key")
+            
+            .setName("archive_key")
             .setDescription("the name which the attachment will be saved under. *can be a path(seperated by '/')*")
             .setRequired(true)
+
     })
 ].map(LynkCommand => LynkCommand.toJSON())
 const rest = new REST({ version: '9' }).setToken(LyncsToken);
