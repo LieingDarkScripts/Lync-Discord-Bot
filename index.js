@@ -38,18 +38,6 @@ const LynkCommands = [
     new SlashCommandBuilder()
     .setName("archive")
     .setDescription("Archive an attachment to be saved under a name.")
-    .addSubcommand(SubCommand => {
-        SubCommand.setName("key")
-        .setDescription("The name to archive the attachment under. *This can also be a path (seperated by )*")
-    })
-    
-    .addSubcommand(SubCommand => {
-        SubCommand.setName("archive type")
-        .setDescription("Whether to archive locally or globally")
-        .addChoice("local", "Locally")
-        .addChoice("global", "Globally")
-        
-    })
    
 ].map(LynkCommand => LynkCommand.toJSON());
 
