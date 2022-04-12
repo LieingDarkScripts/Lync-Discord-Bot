@@ -28,7 +28,7 @@ Client.on("messageCreate", (Message) => {
 
     const {content, reply, bot} = Message;
 
-    if (bot) {
+    if (Message.author.bot) {
        return;
     }
 
