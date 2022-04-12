@@ -42,13 +42,13 @@ const LynkCommands = [
         Option.setName("key")
         .setDescription("The name to archive the attachment under. *This can also be a path (seperated by )*")
         .setRequired(true)
-        Option.addStringOption(Option2 => {
-            Option2.setName("archive Type")
-            Option2.setDescription("Whether to archive locally or globally")
-            Option2.addChoice("local", "Locally")
-            Option2.addChoice("global", "Globally")
-        })
         
+    })
+    .addStringOption(Option => {
+        Option.setName("archive Type")
+        Option.setDescription("Whether to archive locally or globally")
+        Option.addChoice("local", "Locally")
+        Option.addChoice("global", "Globally")
     })
 ].map(LynkCommand => LynkCommand.toJSON());
 
