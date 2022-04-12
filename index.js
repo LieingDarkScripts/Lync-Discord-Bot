@@ -41,7 +41,6 @@ const LynkCommands = [
     .addSubcommand(SubCommand => {
         SubCommand.setName("key")
         .setDescription("The name to archive the attachment under. *This can also be a path (seperated by )*")
-        .setRequired(true)
     })
     
     .addSubcommand(SubCommand => {
