@@ -40,7 +40,7 @@ const LynkCommands = [
     .setDescription("Archive an attachment to be saved under a name.")
     .addStringOption(Option => {
         Option.setName("Key")
-        .setDescription("The name to archive the attachment under. *This can also be a path (seperated by '/')*")
+        .setDescription("The name to archive the attachment under")
         .setRequired(true)
         Option.addStringOption(Option2 => {
             Option2.setName("Archive Type")
