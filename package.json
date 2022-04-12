@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/LieingDarkScripts/Lync-Discord-Bot/issues"
   },
-  "homepage": "https://github.com/LieingDarkScripts/Lync-Discord-Bot#readme"
+  "homepage": "https://github.com/LieingDarkScripts/Lync-Discord-Bot#readme",
+  "dependencies": {
+    "discord.js": "^13.6.0"
+  }
 }
