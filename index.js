@@ -22,7 +22,7 @@ const Client = new Discord.Client({
     ]
 });
 
-Client.login(Ly)
+Client.login(LyncsToken)
 
 Client.on("messageCreate", (Message) => {
 
