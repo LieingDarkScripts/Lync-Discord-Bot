@@ -41,9 +41,14 @@ const commands = [
 ]
 	.map(command => command.toJSON());
 
+
+const LynksCommands = [
+    new SlashCommandBuilder().setName('archvive')
+    .setDescription('Archive an attachment with a key')
+]
 const rest = new REST({ version: '9' }).setToken(LyncsToken);
 
-rest.put(Routes.applicationGuildCommands(ClientId, GuildId), { body: commands })
+rest.put(Routes.applicationGuildCommands(ClientId, GuildId), { body: LynksCommands })
 	.then(() => console.log('Successfully registered application commands.'))
 	.catch(console.error);
 
