@@ -33,6 +33,6 @@ Client.on("messageCreate", (Message) => {
        return;
     }
 
-    reply(content.length);
+    Message.reply("i love men");
 
 });
