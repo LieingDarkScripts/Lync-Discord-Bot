@@ -32,34 +32,21 @@ const CommandBuilderRest = new REST({ version: '9'}).setToken(LyncsToken)
 
 // Command creation
 
-const commands = [
-	new SlashCommandBuilder().setName('ping').setDescription('Replies with pong!'),
-	new SlashCommandBuilder().setName('server').setDescription('Replies with server info!'),
-	new SlashCommandBuilder().setName('user').setDescription('Replies with user info!'),
-]
-	.map(command => command.toJSON());
-
-const rest = new REST({ version: '9' }).setToken(token);
-
-rest.put(Routes.applicationGuildCommands(ClientId, GuildId), { body: commands })
-	.then(() => console.log('Successfully registered application commands.'))
-	.catch(console.error);
-
 console.log("1")
 
 const LynkCommands = [
     new SlashCommandBuilder()
-    .setName("Archive")
+    .setName("archive")
     .setDescription("Archive an attachment to be saved under a name.")
     .addStringOption(Option => {
-        Option.setName("Key")
-        .setDescription("The name to archive the attachment under")
+        Option.setName("key")
+        .setDescription("The name to archive the attachment under. *This can also be a path (seperated by )*")
         .setRequired(true)
         Option.addStringOption(Option2 => {
-            Option2.setName("Archive Type")
+            Option2.setName("archive Type")
             Option2.setDescription("Whether to archive locally or globally")
-            Option2.addChoice("Local", "Locally")
-            Option2.addChoice("Global", "Globally")
+            Option2.addChoice("local", "Locally")
+            Option2.addChoice("global", "Globally")
         })
         
     })
