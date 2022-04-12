@@ -37,7 +37,7 @@ console.log("1")
 const LynkCommands = [
     new SlashCommandBuilder()
     .setName("archive")
-    .setDescription("Archive an attachment to be saved under a name.")
+    .setDescription("archive an attachment to be saved under a name.")
    
 ].map(LynkCommand => LynkCommand.toJSON());
 
