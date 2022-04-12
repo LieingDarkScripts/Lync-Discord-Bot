@@ -34,14 +34,18 @@ const CommandBuilderRest = new REST({ version: '9'}).setToken(LyncsToken)
 
 console.log("1")
 
-const LynkCommands = [
-    new SlashCommandBuilder()
-    .setName("archive")
-    .setDescription("archive an attachment to be saved under a name.")
-   
-].map(LynkCommand => LynkCommand.toJSON());
+const commands = [
+	new SlashCommandBuilder().setName('ping').setDescription('Replies with pong!'),
+	new SlashCommandBuilder().setName('server').setDescription('Replies with server info!'),
+	new SlashCommandBuilder().setName('user').setDescription('Replies with user info!'),
+]
+	.map(command => command.toJSON());
 
-console.log(LynkCommands)
+const rest = new REST({ version: '9' }).setToken(token);
+
+rest.put(Routes.applicationGuildCommands(ClientId, GuildId), { body: commands })
+	.then(() => console.log('Successfully registered application commands.'))
+	.catch(console.error);
 
 
 // Client Init
