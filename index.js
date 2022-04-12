@@ -1,7 +1,13 @@
 // Programmed by Ben. S. Created on 4/12/2022; 3:58 PM
 
+
+// Constants
 const Discord = require("discord.js");
-const {LyncsToken} = process.env; // Heroku configuration variables
+const {LyncsToken, ClientId, GuildId} = process.env; // Heroku configuration variables
+
+const {REST} = require("@discordjs/rest")
+const {SlashCommandBuilder} = require("@discordjs/builders")
+const {Routes} = require("discord-api-types/v9")
 
 const Client = new Discord.Client({
     intents: ["GUILDS",
@@ -22,7 +28,36 @@ const Client = new Discord.Client({
     ]
 });
 
+const CommandBuilderRest = new REST({ version: '9'}).setToken(LyncsToken)
+
+// Command creation
+
+const LynkCommands = [
+    new SlashCommandBuilder()
+    .setName("Archive")
+    .setDescription("Archive an attachment to be saved under a name.")
+    .addStringOption(Option => {
+        Option.setName("Key")
+        .setDescription("The name to archive the attachment under. *This can also be a path (seperated by '/')*")
+        .setRequired(true)
+        Option.addStringOption(Option2 => {
+            Option2.setName("Archive Type")
+            Option2.setDescription("Whether to archive locally or globally")
+            Option2.addChoice("Local", "Locally")
+            Option2.addChoice("Global", "Globally")
+        })
+        
+    })
+].map(LynkCommand => LynkCommand.toJSON());
+
+
+// Client Init
+
 Client.login(LyncsToken)
+CommandBuilderRest.put(Routes.applicationGuildCommands(ClientId, GuildId, {body: LynkCommands}))
+    .then(() => console.log("registered"))
+    .catch(console.error);
+
 
 Client.on("messageCreate", (Message) => {
 
@@ -35,3 +70,5 @@ Client.on("messageCreate", (Message) => {
     Message.reply("i love men");
 
 });
+
+
