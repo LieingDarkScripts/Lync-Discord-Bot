@@ -25,6 +25,8 @@ const Client = new Discord.Client({
     ]
 });
 
+Client.login(LyncsToken)
+
 Client.on("messageCreate", (Message) => {
 
     const {content, reply, bot} = Message;
