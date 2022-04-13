@@ -70,6 +70,12 @@ const commands = [
         .setRequired(true)
 
         )
+    .addStringOption(Option => Option
+        .setName("archive type")
+        .setDescription("describes which way to archive")
+        .addChoice("local", "locally(exclusively you)")
+        .addChoice("global", "globally(server)")
+        )
  ]
 
 const rest = new REST({ version: '9' }).setToken(LyncsToken);
