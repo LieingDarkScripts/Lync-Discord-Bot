@@ -42,7 +42,7 @@ const commands = [
 	.map(command => command.toJSON());
 
 
- const LynksCommands = [
+ const LynkCommands = [
     new SlashCommandBuilder()
 	.setName('info')
 	.setDescription('Get info about a user or a server!')
@@ -58,6 +58,20 @@ const commands = [
 		subcommand
 			.setName('server')
 			.setDescription('Info about the server'))
+ ];
+
+ const LynksCommands = [
+     new SlashCommandBuilder()
+     .setName("archive")
+     .setDescription("Archive an attachment")
+     .addSubcommand(SubCommand => SubCommand
+        .setName("key")
+        .setDescription("the name which the attachment will be saved under. *can be a path(seperated by '/')*")
+        .addStringOption(Option => Option
+            .setName("key")
+            .setDescription("The key to archive under")
+            )
+        )
  ]
 
 const rest = new REST({ version: '9' }).setToken(LyncsToken);
