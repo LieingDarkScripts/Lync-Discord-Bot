@@ -46,7 +46,7 @@ const LynksCommands = [
     new SlashCommandBuilder()
     .setName('archvive')
     .setDescription('Archive an attachment with a key.')
-    .addSubcommand(new SlashCommandBuilder() 
+    .addSubcommand(Command => Command
         .setName("key")
         .setDescription("the name which the attachment will be saved under. *can be a path(seperated by '/')*")
     )
