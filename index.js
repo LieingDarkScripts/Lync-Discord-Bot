@@ -64,13 +64,10 @@ const commands = [
      new SlashCommandBuilder()
      .setName("archive")
      .setDescription("Archive an attachment")
-     .addSubcommand(SubCommand => SubCommand
+     .addStringOption(Option => Option
         .setName("key")
         .setDescription("the name which the attachment will be saved under. *can be a path(seperated by '/')*")
-        .addStringOption(Option => Option
-            .setName("key")
-            .setDescription("The key to archive under")
-            )
+        .setRequired(true)
         )
  ]
 
