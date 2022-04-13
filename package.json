@@ -1,6 +1,6 @@
 {
   "name": "lync-discord-bot",
-  "version": "1.0.0",
+  "version": "1.1.2",
   "description": "A discord bot which allows for easy archiving of attachments like images and videos. It utilizes discords message link system, so you don't have to keep uploading the same thing file over again. All you have to do is archive it under a name, or name location(braches act like folders) and it's saved. Add tags to it if you don't remember the name, so you can look under that tag. Then you just query the tag or name, and it pops up with the message link. ",
   "main": "index.js",
   "scripts": {
