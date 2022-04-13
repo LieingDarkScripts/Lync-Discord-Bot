@@ -49,6 +49,12 @@ const LynksCommands = [
     .addSubcommand(Command => Command
         .setName("key")
         .setDescription("the name which the attachment will be saved under. *can be a path(seperated by '/')*")
+        .addStringOption(option => {
+            option.setName("key")
+            .setDescription("i wana die")
+            .setRequired(true)
+        }
+                )
     )
 ].map(LynkCommand => LynkCommand.toJSON())
 const rest = new REST({ version: '9' }).setToken(LyncsToken);
