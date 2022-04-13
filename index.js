@@ -68,8 +68,7 @@ const commands = [
         .setName("key")
         .setDescription("the name which the attachment will be saved under. *can be a path(seperated by '/')*")
         .setRequired(true)
-        .addChoice("local", "locally")
-        .addChoice("global", "globally")
+
         )
  ]
 
