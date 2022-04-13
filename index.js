@@ -53,7 +53,7 @@ const commands = [
 			.addStringOption(Option => Option
                 .setName("die")
                 .setDescription("i said die")
-                )
+                ))
 	.addSubcommand(subcommand =>
 		subcommand
 			.setName('server')
