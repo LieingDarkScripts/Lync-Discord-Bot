@@ -46,6 +46,10 @@ const LynksCommands = [
     new SlashCommandBuilder()
     .setName('archvive')
     .setDescription('Archive an attachment with a key.')
+    .addStringOption(Option => {
+        Option.setName("key").setDescription("the name which the attachment will be saved under. *can be a path(seperated by '/')*")
+
+    })
 ].map(LynkCommand => LynkCommand.toJSON())
 const rest = new REST({ version: '9' }).setToken(LyncsToken);
 
