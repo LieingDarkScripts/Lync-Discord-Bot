@@ -31,17 +31,6 @@ const Client = new Discord.Client({
 const CommandBuilderRest = new REST({ version: '9'}).setToken(LyncsToken)
 
 // Command creation
-
-console.log("1")
-
-const commands = [
-	new SlashCommandBuilder().setName('ping').setDescription('Replies with pong!'),
-	new SlashCommandBuilder().setName('server').setDescription('Replies with server info!'),
-	new SlashCommandBuilder().setName('user').setDescription('Replies with user info!'),
-]
-	.map(command => command.toJSON());
-
-
  const LynkCommands = [
     new SlashCommandBuilder()
 	.setName('info')
