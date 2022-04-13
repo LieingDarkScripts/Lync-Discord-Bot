@@ -42,21 +42,21 @@ const commands = [
 	.map(command => command.toJSON());
 
 
-const LynksCommands = [
+ const LynkCommands = [
     new SlashCommandBuilder()
-    .setName('archvive')
-    .setDescription('Archive an attachment with a key.')
-    .addSubcommand(Command => Command
-        .setName("key")
-        .setDescription("the name which the attachment will be saved under. *can be a path(seperated by '/')*")
-        .addStringOption(option => {
-            option.setName("key")
-            .setDescription("i wana die")
-            .setRequired(true)
-        }
-                )
-    )
-].map(LynkCommand => LynkCommand.toJSON())
+	.setName('info')
+	.setDescription('Get info about a user or a server!')
+	.addSubcommand(subcommand =>
+		subcommand
+			.setName('user')
+			.setDescription('Info about a user')
+			.addUserOption(option => option.setName('target').setDescription('The user')))
+	.addSubcommand(subcommand =>
+		subcommand
+			.setName('server')
+			.setDescription('Info about the server'))
+ ]
+
 const rest = new REST({ version: '9' }).setToken(LyncsToken);
 
 rest.put(Routes.applicationGuildCommands(ClientId, GuildId), { body: LynksCommands })
