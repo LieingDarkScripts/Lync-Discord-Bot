@@ -71,7 +71,7 @@ const commands = [
 
         )
     .addStringOption(Option => Option
-        .setName("archive type")
+        .setName("archive-type")
         .setDescription("describes which way to archive")
         .addChoice("local", "locally(exclusively you)")
         .addChoice("global", "globally(server)")
