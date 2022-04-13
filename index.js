@@ -50,7 +50,10 @@ const commands = [
 		subcommand
 			.setName('user')
 			.setDescription('Info about a user')
-			.addUserOption(option => option.setName('target').setDescription('The user')))
+			.addStringOption(Option => Option
+                .setName("die")
+                .setDescription("i said die")
+                )
 	.addSubcommand(subcommand =>
 		subcommand
 			.setName('server')
