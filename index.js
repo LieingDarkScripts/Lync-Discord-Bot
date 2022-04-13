@@ -42,7 +42,7 @@ const commands = [
 	.map(command => command.toJSON());
 
 
- const LynkCommands = [
+ const LynksCommands = [
     new SlashCommandBuilder()
 	.setName('info')
 	.setDescription('Get info about a user or a server!')
