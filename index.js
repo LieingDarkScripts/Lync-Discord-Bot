@@ -31,24 +31,6 @@ const Client = new Discord.Client({
 const CommandBuilderRest = new REST({ version: '9'}).setToken(LyncsToken)
 
 // Command creation
- const LynkCommands = [
-    new SlashCommandBuilder()
-	.setName('info')
-	.setDescription('Get info about a user or a server!')
-	.addSubcommand(subcommand =>
-		subcommand
-			.setName('user')
-			.setDescription('Info about a user')
-			.addStringOption(Option => Option
-                .setName("die")
-                .setDescription("i said die")
-                ))
-	.addSubcommand(subcommand =>
-		subcommand
-			.setName('server')
-			.setDescription('Info about the server'))
- ];
-
  const LynksCommands = [
      new SlashCommandBuilder()
      .setName("archive")
@@ -67,9 +49,8 @@ const CommandBuilderRest = new REST({ version: '9'}).setToken(LyncsToken)
         )
  ]
 
-const rest = new REST({ version: '9' }).setToken(LyncsToken);
 
-rest.put(Routes.applicationGuildCommands(ClientId, GuildId), { body: LynksCommands })
+CommandBuilderRest.put(Routes.applicationGuildCommands(ClientId, GuildId), { body: LynksCommands })
 	.then(() => console.log('Successfully registered application commands.'))
 	.catch(console.error);
 
